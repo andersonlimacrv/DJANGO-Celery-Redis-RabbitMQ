@@ -10,6 +10,6 @@ This project is a web application developed with Django and integrated with Cele
 
 - **Data Storage with Redis**: Redis serves as an in-memory database, storing temporary information such as intermediate task results, cache, and message queues. This speeds up task execution and data retrieval, enhancing scalability and system performance.
 
-**Monitoring and Scheduling**: Through Celery and RabbitMQ, real-time task monitoring enables the identification of bottlenecks and resource optimization. Horizontal scalability is achieved by adding worker nodes, ensuring efficient handling of increasing workloads.
+- **Monitoring and Scheduling**: Through Celery and RabbitMQ, real-time task monitoring enables the identification of bottlenecks and resource optimization. Horizontal scalability is achieved by adding worker nodes, ensuring efficient handling of increasing workloads.
 
 This project provides a powerful and flexible solution for managing asynchronous tasks. Leveraging Django, Celery, Redis, and RabbitMQ for message queuing, it delivers an enhanced user experience, efficient scalability, and reliable execution of complex tasks.
