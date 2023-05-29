@@ -1,7 +1,7 @@
-#Django-Celery-Redis-RabbitMQ
+# Django-Celery-Redis-RabbitMQ
 This project is a web application developed with Django and integrated with Celery, Redis, and RabbitMQ. Its main objective is to efficiently manage asynchronous and distributed tasks, providing scalability, reliability, and performance.
 
-##Key Features
+## Key Features
 - **Intuitive User Interface and MQTT Message Exchange**: The system offers an intuitive user interface and integrates with an MQTT server to monitor topics and display them on screen through HTML page requests.
 
 - **Asynchronous Tasks**: Using Celery, tasks can be executed asynchronously, freeing up the user interface for other interactions. This improves responsiveness and overall system efficiency.
