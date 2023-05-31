@@ -1,5 +1,5 @@
 # Byte-compiled / optimized / DLL files
-__pycache__/
+**/__pycache__/
 *.py[cod]
 *$py.class
 
@@ -333,4 +333,3 @@ cython_debug/
 
 # End of https://www.toptal.com/developers/gitignore/api/django
 
-*.txt
