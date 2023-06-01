@@ -1,6 +1,14 @@
 # Django-Celery-Redis-RabbitMQ
 This project is a web application developed with Django and integrated with Celery, Redis, and RabbitMQ. Its main objective is to efficiently manage asynchronous and distributed tasks, providing scalability, reliability, and performance.
 
+### Environment configurations to start this Python projects:
+
+- Virtual environments with Virtualenv
+- PEP8 standardization checking with Pylint and Flake8
+- Code formatting with Black
+- Pre-commit hooks for code actions
+- Tests using pytest
+
 ## Key Features
 - **Intuitive User Interface and MQTT Message Exchange**: The system offers an intuitive user interface and integrates with an MQTT server to monitor topics and display them on screen through HTML page requests.
 

@@ -1,0 +1,29 @@
+repos:
+  - repo: https://github.com/ambv/black
+    rev: 23.3.0
+    hooks:
+      - id: black
+        language_version: 3.11.3
+        stages: [commit]
+  - repo: https://github.com/PyCQA/flake8
+    rev: 6.0.0
+    hooks:
+      - id: flake8
+        stages: [commit]
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        language: system
+        entry: pytest -v
+        always_run: true
+        pass_filenames: false
+        stages: [commit]
+  - repo: local
+    hooks:
+      - id: requirements
+        name: requirements
+        entry: cmd /C "venv\Scripts\pip freeze > requirements.txt && git add requirements.txt"
+        language: system
+        pass_filenames: false
+        stages: [commit]
