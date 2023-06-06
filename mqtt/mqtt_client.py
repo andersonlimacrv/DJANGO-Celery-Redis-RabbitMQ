@@ -60,7 +60,7 @@ class MQTTClient:
             time.sleep(reconnect_delay)
 
             try:
-                client.reconnect()
+                self.client.reconnect()
                 logging.info("Reconnected successfully!")
                 return
             except Exception as err:
@@ -85,7 +85,7 @@ class MQTTClient:
             return
         msg = json.dumps(payload)
         result = self.client.publish(self.topic, msg)
-        status = result[0]
+        status = result.mid
         if status == mqtt.MQTT_ERR_SUCCESS:
             logging.info(f"Send `{msg}` to topic `{self.topic}`")
         else:
@@ -106,6 +106,8 @@ class MQTTClient:
         self.connect()
         while not FLAG_EXIT:
             await asyncio.sleep(1)
+
+        self.disconnect()
 
 
 BROKER = "broker.emqx.io"

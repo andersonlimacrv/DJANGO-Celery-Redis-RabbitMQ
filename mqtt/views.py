@@ -39,7 +39,7 @@ def index_mqtt(request):
         # Verifica se o botão de conexão foi pressionado
         if "connect_btn" in request.POST:
             return redirect("broker_connection")
-        if "disconnect" in request.POST:
+        if "disconnect_btn" in request.POST:
             return redirect("broker_disconnection")
 
         is_connected = mqtt_client is not None and mqtt_client.is_connected()
