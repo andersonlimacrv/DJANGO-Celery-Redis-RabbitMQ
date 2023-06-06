@@ -1,25 +1,62 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MQTT</title>
-        <link rel="stylesheet" href='{% static "mqtt/css/index_mqtt.css" %}'>
-        <script src="{% static 'mqtt/js/index_mqtt.js' %}"></script>
-    
-    </head>
-    <style>
-        
-    </style>
-    <body>
-        <div class= "container">
-        <h1>Título do Documento</h1>
-        <p>Este é um parágrafo de exemplo.</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MQTT</title>
+    <link rel="stylesheet" href='{% static "mqtt/css/index_mqtt.css" %}'>
+    <script src="{% static 'mqtt/js/index_mqtt.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Conexão Broker MQTT.</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="button_conection">
+                <button type="submit" name="connect_btn" class="connect_btn" value="connect">Conectar ao Broker</button>
+                <button type="submit" name="disconnect_btn" class="connect_btn exit" value="disconnect">Desconectar do Broker</button>
+            </div>
+            <div class="send-message-container">
+                <input type="text" class="custom-input" name="topic" placeholder="Tópico MQTT">
+                <input type="text" class="custom-input" name="payload" placeholder="Digite a mensagem MQTT">
+                <button type="submit" class="btn_mqtt">Publish</button>
+            </div>
+        </form>
+
+        <table class="custom-table">
+            <thead>
+            <tr>
+                <th>BROKER</th>
+                <th>PORT</th>
+                <th>TOPIC</th>
+                <th>USERNAME</th>
+                <th>PASSWORD</th>
+                <th>Is Connected</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ mqtt_client.broker }}</td>
+                <td>{{ mqtt_client.port }}</td>
+                <td>{{ mqtt_client.topic }}</td>
+                <td>{{ mqtt_client.username }}</td>
+                <td>{{ mqtt_client.password }}</td>
+                <td><span id="mqtt_status"></span></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="message-list">
+            <ul>
+                {% for message in message_list %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
         </div>
+    </div>
 
-    
-        
-    </body>
+   
+</body>
 </html>
-
